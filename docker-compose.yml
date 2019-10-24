@@ -1,0 +1,10 @@
+version: "3"
+services:
+  back-end:
+    restart: always
+    build: .
+    volumes: 
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8200:8200"
