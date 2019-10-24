@@ -14,13 +14,10 @@ exports.getAnchor = async (req, res, next) => {
 
 exports.createAnchor = async (req, res, next) => {
   try {
-      //const anchorData = req.body;
-      const anchorData = {
-          id: uuid4()
-      };
+      const anchorData = req.body;
       const anchor = new Anchor(anchorData);
       await anchor.save();
-      res.status(200);
+      res.status(200).json();
   } catch (err) {
     console.log(err);
   }
